@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пикассо</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<!-- 
+https://ibb.co/1fVVP7PG
+https://ibb.co/wFFt5zx2
+https://ibb.co/gFdR3NG5
+ -->
+
+<body>
+  
+  <header>
+    <div class="logo">ПИКАССО</div>
+  </header>
+
+
+
+  <div class="content">
+
+    <div class="head-content">
+      <h1>
+        <div>Создайте свое</div>
+        <div>поздравление</div>
+        <div>прямо сейчас!</div>
+      </h1>
+      <button class="big-button" onclick="scrollToSection('select_texture')">Начать</button>
+    </div>
+
+    <div id="select_texture" class="hidden-block texture-content">
+      <h2>Выбирите картинку</h2>
+      
+      <div class="select-texture">
+        <button class="nav left" onclick="scrollSlider(-1)">‹</button>
+
+        <div class="slider" id="slider">
+          <div class="select-block">
+            <div class="cart">
+              <img src="https://i.ibb.co/cc55ZkZh/preset-image-1.png" alt="Вариант 1">
+              <p class="cart-header">С днём рождения!</p>
+              <p class="cart-p1">Уважаемый Иван Иванов</p>
+              <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+              <p class="cart-footer">Пётр Петров</p>
+            </div>
+            <button class="middle-button" onclick="selectPreset('https://i.ibb.co/cc55ZkZh/preset-image-1.png'); scrollToSection('select_constructor')">Вариант 1</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img src="https://i.ibb.co/gLLYkRBc/preset-image-2.png" alt="Вариант 2">
+              <p class="cart-header">С днём рождения!</p>
+              <p class="cart-p1">Уважаемый Иван Иванов</p>
+              <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+              <p class="cart-footer">Пётр Петров</p>
+            </div>
+            <button class="middle-button" onclick="selectPreset('https://i.ibb.co/gLLYkRBc/preset-image-2.png'); scrollToSection('select_constructor')">Вариант 2</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img src="https://i.ibb.co/mF0cGkmL/preset-image-3.png" alt="Вариант 3">
+              <p class="cart-header">С днём рождения!</p>
+              <p class="cart-p1">Уважаемый Иван Иванов</p>
+              <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+              <p class="cart-footer">Пётр Петров</p>
+            </div>
+            <button class="middle-button" onclick="selectPreset('https://i.ibb.co/mF0cGkmL/preset-image-3.png'); scrollToSection('select_constructor')">Вариант 3</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img src="Assets/download_preset.png" alt="Вариант 4">
+              <p class="cart-header">С днём рождения!</p>
+              <p class="cart-p1">Уважаемый Иван Иванов</p>
+              <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+              <p class="cart-footer">Пётр Петров</p>
+            </div>
+            <input type="file" id="image_upload" accept="image/*" hidden>
+            <button class="middle-button" onclick="document.getElementById('image_upload').click()">Выбрать</button>
+          </div>
+
+          <button class="nav right" onclick="scrollSlider(1)">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="select_constructor" class="hidden-block select-constructor-content">
+    <h2>Какое поздравление придумаем?</h2>
+    <div class="select-button">
+      <button class="middle-button" onclick="scrollToSection('constructor'); hideToSection('pattern'); hideToSection('result')">Конструктор</button>
+      <button class="middle-button" onclick="scrollToSection('pattern') ; hideToSection('constructor'); hideToSection('result')">Шаблоны текста</button>
+    </div>
+
+    <div id="constructor" class="hidden-block constructor-content">
+
+    <h2>Конструктор</h2>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить заголовок
+        </button>
+        <div class="input-container">
+          <textarea id="header_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить обращение
+        </button>
+        <div class="input-container">
+          <textarea id="appeal_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить описание
+        </button>
+        <div class="input-container">
+          <textarea id="description_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить подпись
+        </button>
+        <div class="input-container">
+          <textarea id="footer_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <button class="middle-button" onclick="constructorResult(); scrollToSection('result')">Получить результат</button>
+    </div>
+
+    <div id="pattern" class="hidden-block pattern-content">
+      тут типо шаблоны
+    </div>
+  </div>
+
+  <div id="result" class="hidden-block result-content">
+    <h2>Ваша открытка готова!</h2>
+    
+    <div class="result-block">
+      <div id="result_cart" class="cart">
+        <img src="https://i.ibb.co/cc55ZkZh/preset-image-1.png" alt="Результат" crossorigin="anonymous">
+        <!-- <div class="cart-image" data-html2canvas-ignore="true"></div> -->
+        <p id="header_result" class="cart-header">С днём рождения!</p>
+        <p id="appeal_result" class="cart-p1">Уважаемый Иван Иванов</p>
+        <p id="description_result" class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+        <p id="footer_result" class="cart-footer">Пётр Петров</p>
+      </div>
+      <button class="middle-button" onclick="downloadResult()">Скачать</button>
+    </div>
+  </div>
+
+
+
+  
+
+  <script src="javascript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.3.0/dist/dom-to-image-more.min.js"></script>
+</body>
+</html>
