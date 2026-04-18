@@ -21,7 +21,7 @@ body {
 }
 
 header {
-  /* position: fixed; */
+  position: fixed;
   display: flex;
   justify-content: start;
   background: #7eaeb0;
