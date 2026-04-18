@@ -12,9 +12,9 @@
 }
 
 body {
-  background: #7eaeb0;
   display: block;
-  max-width: 480px;
+  justify-items: center;
+  background: black;
   /* display: flex; */
   /* position: relative; */
   /* border: solid red; */
@@ -24,6 +24,9 @@ header {
   /* position: fixed; */
   display: flex;
   justify-content: start;
+  background: #7eaeb0;
+  max-width: 480px;
+  width: 100%;
 }
 
 .logo {
@@ -37,6 +40,16 @@ header {
 
 .content {
   display: block;
+  max-width: 480px;
+}
+
+.background {
+  background: #7eaeb0;
+  position: fixed;
+  max-width: 480px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 .head-content {
