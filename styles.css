@@ -24,9 +24,10 @@ header {
   position: fixed;
   display: flex;
   justify-content: start;
-  background: #7eaeb0;
+  /* background: #7eaeb0; */
   max-width: 480px;
   width: 100%;
+  z-index: 10;
 }
 
 .logo {
