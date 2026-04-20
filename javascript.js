@@ -5,7 +5,8 @@ function scrollToSection(id) {
 
   section.scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "start",
+    inline: "nearest"
   });
 
   setTimeout(() => {
@@ -25,8 +26,8 @@ function hideToSection(id) {
   section.style.display = "none";
 }
 
-function scrollSlider(direction) {
-  const slider = document.getElementById('slider');
+function scrollSlider(direction, slider_name) {
+  const slider = document.getElementById(slider_name);
   const scrollAmount = 315; // ширина блока + отступ
   slider.scrollBy({
     left: direction * scrollAmount,
@@ -66,17 +67,23 @@ document.addEventListener('click', (e) => {
 });
 
 
-let selectedPreset = null;
+let selectedPresetImage = null;
+let selectedPresetText = null;
 
-function selectPreset(url) {
-  selectedPreset = url;
+function selectPresetImage(url) {
+  selectedPresetImage = url;
   
   const img = document.querySelector("#result_cart img");
 
-  if (selectedPreset) {
-    img.src = selectedPreset;
+  if (selectedPresetImage) {
+    img.src = selectedPresetImage;
     img.crossOrigin = "anonymous";
   }
+}
+
+
+function selectPresetText(selector) {
+  selectedPresetText = document.getElementById(selector).textContent;
 }
 
 document.getElementById("image_upload").addEventListener("change", function (e) {
@@ -86,12 +93,12 @@ document.getElementById("image_upload").addEventListener("change", function (e) 
   const reader = new FileReader();
 
   reader.onload = function (event) {
-    selectedPreset = event.target.result; // base64
+    selectedPresetImage = event.target.result; // base64
 
     // (опционально) показать превью сразу
     const img = document.querySelector("#result_cart img");
     if (img) {
-      img.src = selectedPreset;
+      img.src = selectedPresetImage;
     }
     scrollToSection('select_constructor')
   };
@@ -103,8 +110,8 @@ function constructorResult() {
 
   const img = document.querySelector("#result_cart img");
 
-  if (selectedPreset) {
-    img.src = selectedPreset;
+  if (selectedPresetImage) {
+    img.src = selectedPresetImage;
     img.crossOrigin = "anonymous";
   }
 
@@ -113,6 +120,32 @@ function constructorResult() {
     appeal: document.getElementById("appeal_input").value,
     description: document.getElementById("description_input").value,
     footer: document.getElementById("footer_input").value
+  };
+
+  // Записываем в карточку
+  document.getElementById("header_result").textContent = data.header;
+  document.getElementById("appeal_result").textContent = data.appeal;
+  document.getElementById("description_result").textContent = data.description;
+  document.getElementById("footer_result").textContent = data.footer;
+
+  // Сохраняем глобально для скачивания
+  window.resultData = data;
+}
+
+function patternResult() {
+
+  const img = document.querySelector("#result_cart img");
+
+  if (selectedPresetImage) {
+    img.src = selectedPresetImage;
+    img.crossOrigin = "anonymous";
+  }
+
+  const data = {
+    header: document.getElementById("header_input_2").value,
+    appeal: document.getElementById("appeal_input_2").value,
+    description: selectedPresetText,
+    footer: document.getElementById("footer_input_2").value
   };
 
   // Записываем в карточку

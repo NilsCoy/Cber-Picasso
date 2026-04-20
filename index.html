@@ -41,9 +41,9 @@ https://ibb.co/gFdR3NG5
       <h2>Выбирите картинку</h2>
       
       <div class="select-texture">
-        <button class="nav left" onclick="scrollSlider(-1)">‹</button>
+        <button class="nav left" onclick="scrollSlider(-1, 'slider_1')">‹</button>
 
-        <div class="slider" id="slider">
+        <div class="slider" id="slider_1">
           <div class="select-block">
             <div class="cart">
               <img src="https://i.ibb.co/cc55ZkZh/preset-image-1.png" alt="Вариант 1">
@@ -52,7 +52,7 @@ https://ibb.co/gFdR3NG5
               <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
               <p class="cart-footer">Пётр Петров</p>
             </div>
-            <button class="middle-button" onclick="selectPreset('https://i.ibb.co/cc55ZkZh/preset-image-1.png'); scrollToSection('select_constructor')">Вариант 1</button>
+            <button class="middle-button" onclick="selectPresetImage('https://i.ibb.co/cc55ZkZh/preset-image-1.png'); scrollToSection('select_constructor')">Вариант 1</button>
           </div>
           <div class="select-block">
             <div class="cart">
@@ -62,7 +62,7 @@ https://ibb.co/gFdR3NG5
               <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
               <p class="cart-footer">Пётр Петров</p>
             </div>
-            <button class="middle-button" onclick="selectPreset('https://i.ibb.co/gLLYkRBc/preset-image-2.png'); scrollToSection('select_constructor')">Вариант 2</button>
+            <button class="middle-button" onclick="selectPresetImage('https://i.ibb.co/gLLYkRBc/preset-image-2.png'); scrollToSection('select_constructor')">Вариант 2</button>
           </div>
           <div class="select-block">
             <div class="cart">
@@ -72,7 +72,7 @@ https://ibb.co/gFdR3NG5
               <p class="cart-p2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
               <p class="cart-footer">Пётр Петров</p>
             </div>
-            <button class="middle-button" onclick="selectPreset('https://i.ibb.co/mF0cGkmL/preset-image-3.png'); scrollToSection('select_constructor')">Вариант 3</button>
+            <button class="middle-button" onclick="selectPresetImage('https://i.ibb.co/mF0cGkmL/preset-image-3.png'); scrollToSection('select_constructor')">Вариант 3</button>
           </div>
           <div class="select-block">
             <div class="cart">
@@ -86,7 +86,7 @@ https://ibb.co/gFdR3NG5
             <button class="middle-button" onclick="document.getElementById('image_upload').click()">Выбрать</button>
           </div>
 
-          <button class="nav right" onclick="scrollSlider(1)">›</button>
+          <button class="nav right" onclick="scrollSlider(1, 'slider_1')">›</button>
         </div>
       </div>
     </div>
@@ -147,7 +147,97 @@ https://ibb.co/gFdR3NG5
     </div>
 
     <div id="pattern" class="hidden-block pattern-content">
-      тут типо шаблоны
+
+    <h2>Шаблоны</h2>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить заголовок
+        </button>
+        <div class="input-container">
+          <textarea id="header_input_2" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить обращение
+        </button>
+        <div class="input-container">
+          <textarea id="appeal_input_2" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="select-texture">
+        <button class="nav left" onclick="scrollSlider(-1, 'slider_2')">‹</button>
+
+        <div class="slider" id="slider_2">
+          <div class="select-block">
+            <div class="cart">
+              <img src="Assets/clear_background.png" alt="Вариант 1">
+              <p class="cart-header">_ ____ _________</p>
+              <p class="cart-p1">_________ ____ ______</p>
+              <p id="cart_text_1" class="cart-p2">
+                Пусть твой личный компас всегда указывает точно на то место, где тепло светит внутреннее солнце, а горизонт никогда не превращается в стену. Желаю, чтобы воздух в твоих легких всегда пах ветром перемен, когда это нужно, и покоем, когда это важно. Пусть каждый следующий шаг будет легче предыдущего, а пройденный путь — только началом большой и красивой карты твоей жизни!
+              </p>
+              <p class="cart-footer">____ ______</p>
+            </div>
+            <button class="middle-button" onclick="selectPresetText('cart_text_1')">Вариант 1</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img src="Assets/clear_background.png" alt="Вариант 2">
+              <p class="cart-header">_ ____ _________</p>
+              <p class="cart-p1">_________ ____ ______</p>
+              <p id="cart_text_2" class="cart-p2">
+                Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!
+              </p>
+              <p class="cart-footer">____ ______</p>
+            </div>
+            <button class="middle-button" onclick="selectPresetText('cart_text_2')">Вариант 2</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img src="Assets/clear_background.png" alt="Вариант 3">
+              <p class="cart-header">_ ____ _________</p>
+              <p class="cart-p1">_________ ____ ______</p>
+              <p id="cart_text_3" class="cart-p2">
+                Желаем тебе тонкой настройки мира: там, где надо — пусть звучат громкие фанфары, а там, где хочется тишины — воцаряется идеальная пауза. Пусть в твоей внутренней вселенной гравитация притягивает только хороших людей, светлые мысли и удачные совпадения. А все лишнее пусть теряется где-то на подлете, превращаясь в пыль неслучившихся проблем!
+              </p>
+              <p class="cart-footer">____ ______</p>
+            </div>
+            <button class="middle-button" onclick="selectPresetText('cart_text_3')">Вариант 3</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img src="Assets/clear_background.png" alt="Вариант 4">
+              <p class="cart-header">_ ____ _________</p>
+              <p class="cart-p1">_________ ____ ______</p>
+              <p id="cart_text_4" class="cart-p2">
+                Пусть этот день станет тем самым звеном в цепи мгновений, которое звенит особенно чисто. Желаю тебе прозрачности в намерениях, прочности в опорах и гибкости в решениях. Пусть твоя жизнь будет похожа на дорогую фотопленку: чтобы в ней проявлялись только те сюжеты, которые хочется рассматривать снова и снова. И пусть у тебя всегда хватает света, чтобы подсветить свои собственные лучшие стороны!
+              </p>
+              <p class="cart-footer">____ ______</p>
+            </div>
+            <button class="middle-button" onclick="selectPresetText('cart_text_4')">Вариант 4</button>
+          </div>
+
+          <button class="nav right" onclick="scrollSlider(1, 'slider_2')">›</button>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить подпись
+        </button>
+        <div class="input-container">
+          <textarea id="footer_input_2" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <button class="middle-button" onclick="patternResult(); scrollToSection('result')">Получить результат</button>
     </div>
   </div>
 
