@@ -82,8 +82,10 @@ function selectPresetImage(url) {
 }
 
 
-function selectPresetText(selector) {
-  selectedPresetText = document.getElementById(selector).textContent;
+function selectPresetText(buttonElement) {
+  const cartContainer = buttonElement.closest('.select-block');
+  const textElement = cartContainer.querySelector('.cart-p2');
+  selectedPresetText = textElement.textContent;
 }
 
 document.getElementById("image_upload").addEventListener("change", function (e) {
@@ -122,11 +124,41 @@ function constructorResult() {
     footer: document.getElementById("footer_input").value
   };
 
+  const header = document.getElementById("header_result")
+  const appeal = document.getElementById("appeal_result")
+  const description = document.getElementById("description_result")
+  const footer = document.getElementById("footer_result")
+
   // Записываем в карточку
-  document.getElementById("header_result").textContent = data.header;
-  document.getElementById("appeal_result").textContent = data.appeal;
-  document.getElementById("description_result").textContent = data.description;
-  document.getElementById("footer_result").textContent = data.footer;
+  header.textContent = data.header;
+  appeal.textContent = data.appeal;
+  description.textContent = data.description;
+  footer.textContent = data.footer;
+
+  if (data.header === '') {
+    header.style.display = "none";
+  }
+  else {
+    header.style.display = "block";
+  }
+  if (data.appeal === '') {
+    appeal.style.display = "none";
+  }
+  else {
+    appeal.style.display = "block";
+  }
+  if (data.description === '') {
+    description.style.display = "none";
+  }
+  else {
+    description.style.display = "block";
+  }
+  if (data.footer === '') {
+    footer.style.display = "none";
+  }
+  else {
+    footer.style.display = "block";
+  }
 
   // Сохраняем глобально для скачивания
   window.resultData = data;
@@ -148,11 +180,41 @@ function patternResult() {
     footer: document.getElementById("footer_input_2").value
   };
 
+  const header = document.getElementById("header_result")
+  const appeal = document.getElementById("appeal_result")
+  const description = document.getElementById("description_result")
+  const footer = document.getElementById("footer_result")
+
   // Записываем в карточку
-  document.getElementById("header_result").textContent = data.header;
-  document.getElementById("appeal_result").textContent = data.appeal;
-  document.getElementById("description_result").textContent = data.description;
-  document.getElementById("footer_result").textContent = data.footer;
+  header.textContent = data.header;
+  appeal.textContent = data.appeal;
+  description.textContent = data.description;
+  footer.textContent = data.footer;
+
+  if (data.header === '') {
+    header.style.display = "none";
+  }
+  else {
+    header.style.display = "block";
+  }
+  if (data.appeal === '') {
+    appeal.style.display = "none";
+  }
+  else {
+    appeal.style.display = "block";
+  }
+  if (data.description === '') {
+    description.style.display = "none";
+  }
+  else {
+    description.style.display = "block";
+  }
+  if (data.footer === '') {
+    footer.style.display = "none";
+  }
+  else {
+    footer.style.display = "block";
+  }
 
   // Сохраняем глобально для скачивания
   window.resultData = data;

@@ -166,11 +166,18 @@ button {
   /* padding: 10px; */
   text-align: center;
   color: white;
+  display: grid;
+  align-items: end;
 }
 
 .cart {
   /* position: relative; */
   background: linear-gradient(135deg, #449996, #00756F);
+  align-self: flex-start;
+}
+
+.select-block .middle-button {
+  bottom: 0;
 }
 
 

@@ -170,6 +170,16 @@ https://ibb.co/gFdR3NG5
         </div>
       </div>
 
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить подпись
+        </button>
+        <div class="input-container">
+          <textarea id="footer_input_2" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
       <div class="select-texture">
         <button class="nav left" onclick="scrollSlider(-1, 'slider_2')">‹</button>
 
@@ -184,7 +194,7 @@ https://ibb.co/gFdR3NG5
               </p>
               <p class="cart-footer">____ ______</p>
             </div>
-            <button class="middle-button" onclick="selectPresetText('cart_text_1')">Вариант 1</button>
+            <button class="middle-button" onclick="selectPresetText(this); patternResult(); scrollToSection('result')">Вариант 1</button>
           </div>
           <div class="select-block">
             <div class="cart">
@@ -196,7 +206,7 @@ https://ibb.co/gFdR3NG5
               </p>
               <p class="cart-footer">____ ______</p>
             </div>
-            <button class="middle-button" onclick="selectPresetText('cart_text_2')">Вариант 2</button>
+            <button class="middle-button" onclick="selectPresetText(this); patternResult(); scrollToSection('result')">Вариант 2</button>
           </div>
           <div class="select-block">
             <div class="cart">
@@ -208,7 +218,7 @@ https://ibb.co/gFdR3NG5
               </p>
               <p class="cart-footer">____ ______</p>
             </div>
-            <button class="middle-button" onclick="selectPresetText('cart_text_3')">Вариант 3</button>
+            <button class="middle-button" onclick="selectPresetText(this); patternResult(); scrollToSection('result')">Вариант 3</button>
           </div>
           <div class="select-block">
             <div class="cart">
@@ -220,24 +230,12 @@ https://ibb.co/gFdR3NG5
               </p>
               <p class="cart-footer">____ ______</p>
             </div>
-            <button class="middle-button" onclick="selectPresetText('cart_text_4')">Вариант 4</button>
+            <button class="middle-button" onclick="selectPresetText(this); patternResult(); scrollToSection('result')">Вариант 4</button>
           </div>
 
           <button class="nav right" onclick="scrollSlider(1, 'slider_2')">›</button>
         </div>
       </div>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Добавить подпись
-        </button>
-        <div class="input-container">
-          <textarea id="footer_input_2" type="text" placeholder="Введите текст"></textarea>
-        </div>
-      </div>
-
-      <button class="middle-button" onclick="patternResult(); scrollToSection('result')">Получить результат</button>
     </div>
   </div>
 
