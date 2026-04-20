@@ -224,10 +224,10 @@ function downloadResult() {
   const node = document.getElementById("result_cart");
 
   domtoimage.toPng(node, {
-    width: node.offsetWidth * 2,
-    height: node.offsetHeight * 2,
+    width: node.offsetWidth * 5,
+    height: node.offsetHeight * 5,
     style: {
-      transform: "scale(2)",
+      transform: "scale(5)",
       transformOrigin: "top left"
     }
   })
