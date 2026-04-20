@@ -150,8 +150,7 @@ button {
   gap: 16px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-left: 55px;
-  padding-right: 55px;
+  padding: 0px 20px;
 }
 
 .slider::-webkit-scrollbar {
