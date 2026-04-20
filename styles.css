@@ -173,6 +173,7 @@ button {
   /* position: relative; */
   background: linear-gradient(135deg, #449996, #00756F);
   align-self: flex-start;
+  padding-bottom: 10px;
 }
 
 .select-block .middle-button {
@@ -238,7 +239,7 @@ button {
 
 .cart-footer{
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   font-size: 15px;
 }
 
