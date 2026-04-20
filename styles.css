@@ -354,6 +354,18 @@ button {
   padding: 0px 20px;
 }
 
+.promt-content {
+  padding-top: 100px;
+  margin-top: 200px;
+  margin-bottom: 400px;
+  padding: 0px 20px;
+}
+.promt-content h2 {
+  margin-bottom: 100px;
+  text-align: center;
+  padding-top: 50px;
+}
+
 
 .result-content {
   padding-top: 100px;

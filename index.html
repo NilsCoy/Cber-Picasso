@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Пикассо</title>
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=2">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,13 +95,14 @@ https://ibb.co/gFdR3NG5
   <div id="select_constructor" class="hidden-block select-constructor-content">
     <h2>Какое поздравление придумаем?</h2>
     <div class="select-button">
-      <button class="middle-button" onclick="scrollToSection('constructor'); hideToSection('pattern'); hideToSection('result')">Конструктор</button>
-      <button class="middle-button" onclick="scrollToSection('pattern') ; hideToSection('constructor'); hideToSection('result')">Шаблоны текста</button>
+      <button class="middle-button" onclick="scrollToSection('constructor'); hideToSection('pattern'); hideToSection('promt'); hideToSection('result')">Конструктор</button>
+      <button class="middle-button" onclick="scrollToSection('pattern') ; hideToSection('constructor'); hideToSection('promt'); hideToSection('result')">Шаблоны текста</button>
+      <button class="middle-button" onclick="scrollToSection('promt') ; hideToSection('constructor'); hideToSection('pattern'); hideToSection('result')">Создать промт</button>
     </div>
 
     <div id="constructor" class="hidden-block constructor-content">
 
-    <h2>Конструктор</h2>
+      <h2>Конструктор</h2>
 
       <div class="input-button">
         <button class="toggle-button"">
@@ -148,7 +149,7 @@ https://ibb.co/gFdR3NG5
 
     <div id="pattern" class="hidden-block pattern-content">
 
-    <h2>Шаблоны</h2>
+      <h2>Шаблоны</h2>
 
       <div class="input-button">
         <button class="toggle-button"">
@@ -239,6 +240,55 @@ https://ibb.co/gFdR3NG5
     </div>
   </div>
 
+  
+
+    <div id="promt" class="hidden-block promt-content">
+
+      <h2>Давайте создадим промт для ИИ</h2>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить заголовок
+        </button>
+        <div class="input-container">
+          <textarea id="header_input_3" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить обращение
+        </button>
+        <div class="input-container">
+          <textarea id="appeal_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить описание
+        </button>
+        <div class="input-container">
+          <textarea id="description_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить подпись
+        </button>
+        <div class="input-container">
+          <textarea id="footer_input" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <button class="middle-button" onclick="aiResult(); scrollToSection('result')">Получить результат</button>
+    </div>
+
   <div id="result" class="hidden-block result-content">
     <h2>Ваша открытка готова!</h2>
     
@@ -259,10 +309,7 @@ https://ibb.co/gFdR3NG5
   
   </div>
 
-
-
   
-
   <script src="javascript.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.3.0/dist/dom-to-image-more.min.js"></script>
 </body>
