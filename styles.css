@@ -324,6 +324,7 @@ button {
 }
 
 .input-container {
+  padding: 0px 20px;
   width: 100%;
   max-height: 0;
   overflow: hidden;
@@ -351,14 +352,12 @@ button {
   padding-top: 100px;
   margin-top: 200px;
   margin-bottom: 400px;
-  padding: 0px 20px;
 }
 
 .promt-content {
   padding-top: 100px;
   margin-top: 200px;
   margin-bottom: 400px;
-  padding: 0px 20px;
 }
 .promt-content h2 {
   margin-bottom: 100px;
@@ -371,7 +370,6 @@ button {
   padding-top: 100px;
   margin-top: 200px;
   margin-bottom: 400px;
-  padding: 0px 20px;
 }
 
 .result-content h2 {
