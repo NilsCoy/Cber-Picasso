@@ -77,7 +77,6 @@ function selectPresetImage(url) {
 
   if (selectedPresetImage) {
     img.src = selectedPresetImage;
-    img.crossOrigin = "anonymous";
   }
 }
 
@@ -114,7 +113,6 @@ function constructorResult() {
 
   if (selectedPresetImage) {
     img.src = selectedPresetImage;
-    img.crossOrigin = "anonymous";
   }
 
   const data = {
@@ -170,7 +168,6 @@ function patternResult() {
 
   if (selectedPresetImage) {
     img.src = selectedPresetImage;
-    img.crossOrigin = "anonymous";
   }
 
   const data = {
