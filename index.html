@@ -244,27 +244,10 @@ https://ibb.co/gFdR3NG5
 
     <div id="promt" class="hidden-block promt-content">
 
-      <h2>Давайте создадим промт для ИИ</h2>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Добавить заголовок
-        </button>
-        <div class="input-container">
-          <textarea id="header_input_3" type="text" placeholder="Введите текст"></textarea>
-        </div>
-      </div>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Добавить обращение
-        </button>
-        <div class="input-container">
-          <textarea id="appeal_input" type="text" placeholder="Введите текст"></textarea>
-        </div>
-      </div>
+      <h2>
+        <div>Давайте создадим</div>
+        <div>промт для ИИ</div>
+      </h2>
 
       <div class="input-button">
         <button class="toggle-button"">
@@ -272,21 +255,43 @@ https://ibb.co/gFdR3NG5
           Добавить описание
         </button>
         <div class="input-container">
-          <textarea id="description_input" type="text" placeholder="Введите текст"></textarea>
+          <textarea id="description_promt" type="text" placeholder="Введите текст"></textarea>
         </div>
       </div>
 
       <div class="input-button">
         <button class="toggle-button"">
           <div class="button-image"></div>
-          Добавить подпись
+          Добавить пол
         </button>
         <div class="input-container">
-          <textarea id="footer_input" type="text" placeholder="Введите текст"></textarea>
+          <textarea id="gender_promt" type="text" placeholder="Введите текст"></textarea>
         </div>
       </div>
 
-      <button class="middle-button" onclick="aiResult(); scrollToSection('result')">Получить результат</button>
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить должность
+        </button>
+        <div class="input-container">
+          <textarea id="post_promt" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Стиль поздравленя
+        </button>
+        <div class="input-container">
+          <textarea id="style_promt" type="text" placeholder="Введите текст"></textarea>
+        </div>
+      </div>
+
+      <button class="middle-button" onclick="aiResult()">Получить результат</button>
+    
+      <textarea id="promt_text" class="promt-result hidden-block"></textarea>
     </div>
 
   <div id="result" class="hidden-block result-content">

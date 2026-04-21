@@ -238,3 +238,48 @@ function downloadResult() {
     link.click();
   });
 }
+
+function aiResult() {
+  const data = {
+    description: document.getElementById("description_promt").value,
+    gender: document.getElementById("gender_promt").value,
+    post: document.getElementById("post_promt").value,
+    style: document.getElementById("style_promt").value,
+  };
+  const result_input = document.getElementById("promt_text")
+
+  
+  let promt = `Сгенерируй поздравление:\n`
+  for (const [key, value] of Object.entries(data)) {
+    if (key === 'description') {
+      if (!value) {
+      alert(`Поле описания не заполнено!`);
+      return;
+      }
+      else {
+        promt += `\nОписание поздравления: ${value}`;
+      }
+    }
+    if (key === 'gender') {
+      if (value) {
+        promt += `\nПол: ${value}`;
+      }
+    }
+    if (key === 'post') {
+      if (value) {
+        promt += `\nДолжность: ${value}`;
+      }
+    }
+    if (key === 'style') {
+      if (value) {
+        promt += `\nСтиль поздравления: ${value}`;
+      }
+    }
+  }
+
+  result_input.value = promt;
+  scrollToSection('promt_text');
+
+  result_input.style.height = 'auto';
+  result_input.style.height = result_input.scrollHeight + 'px';
+}
