@@ -70,8 +70,10 @@ document.addEventListener('click', (e) => {
 let selectedPresetImage = null;
 let selectedPresetText = null;
 
-function selectPresetImage(url) {
-  selectedPresetImage = url;
+function selectPresetImage(buttonElement) {
+  const cartContainer = buttonElement.closest('.select-block');
+  const imgElement = cartContainer.querySelector('img');
+  selectedPresetImage = imgElement.src;
   
   const img = document.querySelector("#result_cart img");
 
@@ -217,21 +219,31 @@ function patternResult() {
   window.resultData = data;
 }
 
+// function downloadResult() {
+//   const node = document.getElementById("result_cart");
+
+//   domtoimage.toPng(node, {
+//     width: node.offsetWidth * 5,
+//     height: node.offsetHeight * 5,
+//     style: {
+//       transform: "scale(5)",
+//       transformOrigin: "top left"
+//     }
+//   })
+//   .then(dataUrl => {
+//     const link = document.createElement("a");
+//     link.download = "card.png";
+//     link.href = dataUrl;
+//     link.click();
+//   });
+// }
 function downloadResult() {
   const node = document.getElementById("result_cart");
 
-  domtoimage.toPng(node, {
-    width: node.offsetWidth * 5,
-    height: node.offsetHeight * 5,
-    style: {
-      transform: "scale(5)",
-      transformOrigin: "top left"
-    }
-  })
-  .then(dataUrl => {
+  html2canvas(node, { scale: 5 }).then(canvas => {
     const link = document.createElement("a");
     link.download = "card.png";
-    link.href = dataUrl;
+    link.href = canvas.toDataURL("image/png");
     link.click();
   });
 }
