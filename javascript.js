@@ -218,26 +218,26 @@ function patternResult() {
   window.resultData = data;
 }
 
-// function downloadResult() {
-//   const node = document.getElementById("result_cart");
+function downloadResult() {
+  const node = document.getElementById("result_cart");
 
-//   domtoimage.toPng(node, {
-//     cacheBust: true,
-//     useCORS: true,
-//     width: node.offsetWidth * 5,
-//     height: node.offsetHeight * 5,
-//     style: {
-//       transform: "scale(5)",
-//       transformOrigin: "top left"
-//     }
-//   })
-//   .then(dataUrl => {
-//     const link = document.createElement("a");
-//     link.download = "card.png";
-//     link.href = dataUrl;
-//     link.click();
-//   });
-// }
+  domtoimage.toPng(node, {
+    cacheBust: true,
+    useCORS: true,
+    width: node.offsetWidth * 5,
+    height: node.offsetHeight * 5,
+    style: {
+      transform: "scale(5)",
+      transformOrigin: "top left"
+    }
+  })
+  .then(dataUrl => {
+    const link = document.createElement("a");
+    link.download = "card.png";
+    link.href = dataUrl;
+    link.click();
+  });
+}
 // function downloadResult() {
 //   const node = document.getElementById("result_cart");
 
@@ -248,17 +248,17 @@ function patternResult() {
 //     link.click();
 //   });
 // }
-function downloadResult() {
-  const node = document.getElementById("result_cart");
+// function downloadResult() {
+//   const node = document.getElementById("result_cart");
 
-  htmlToImage.toPng(node, { pixelRatio: 5, cacheBust: true, useCORS: true })
-    .then(dataUrl => {
-      const link = document.createElement("a");
-      link.download = "card.png";
-      link.href = dataUrl;
-      link.click();
-    });
-}
+//   htmlToImage.toPng(node, { pixelRatio: 5, cacheBust: true, useCORS: true })
+//     .then(dataUrl => {
+//       const link = document.createElement("a");
+//       link.download = "card.png";
+//       link.href = dataUrl;
+//       link.click();
+//     });
+// }
 
 function aiResult() {
   const data = {
