@@ -263,9 +263,9 @@ function downloadResult() {
 function aiResult() {
   const data = {
     description: document.getElementById("description_promt").value,
-    gender: document.getElementById("gender_promt").value,
+    gender: document.querySelector('input[name="gender_promt"]:checked')?.value,
     post: document.getElementById("post_promt").value,
-    style: document.getElementById("style_promt").value,
+    style: document.querySelector('input[name="style_promt"]:checked')?.value,
   };
   const result_input = document.getElementById("promt_text")
 
@@ -282,8 +282,15 @@ function aiResult() {
       }
     }
     if (key === 'gender') {
-      if (value) {
-        promt += `\nПол: ${value}`;
+      if (value && value != 'undefined') {
+        let text = '';
+        if (value === 'male') {
+          text = 'Мужчина';
+        }
+        if (value === 'female') {
+          text = 'Женщина';
+        }
+        promt += `\nПол: ${text}`;
       }
     }
     if (key === 'post') {
@@ -292,8 +299,15 @@ function aiResult() {
       }
     }
     if (key === 'style') {
-      if (value) {
-        promt += `\nСтиль поздравления: ${value}`;
+      if (value && value !== 'undefined') {
+        let text = value;
+        if (value === 'style_1') {
+          text = 'мягкий, личный, искренний, без шаблонов и канцелярита.';
+        }
+        if (value === 'style_2') {
+          text = 'официально-деловой, сдержанный, статусный, без панибратства и бытовых слов';
+        }
+        promt += `\nСтиль поздравления: ${text}`;
       }
     }
   }

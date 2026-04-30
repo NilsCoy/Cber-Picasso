@@ -244,8 +244,8 @@ button {
   padding-bottom: 10px;
 }
 .cart-p1, .cart-p2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 15px;
 }
 
@@ -336,15 +336,22 @@ button {
 }
 
 .input-container {
-  /* padding: 0px 20px; */
   width: 100%;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease;
+  color: white;
+  font-size: 16px;
+  display: grid;
 }
 /* Когда добавлен класс - увеличиваем высоту */
 .input-container.expanded {
   max-height: 200px;
+}
+.input-container div {
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
 }
 .input-container textarea {
   width: calc(100% - 10px);
@@ -358,7 +365,13 @@ button {
   transition: height 0.2s ease;
   resize: none;
 }
-
+.input-container input {
+  width: 25px;
+  height: 25px;
+  margin: 5px 5px 5px 0px;
+  transition: height 0.2s ease;
+  resize: none;
+}
 
 .pattern-content {
   padding-top: 100px;
