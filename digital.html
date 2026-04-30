@@ -6,7 +6,7 @@
   <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <title>Пикассо</title>
 
-  <link rel="stylesheet" href="./styles.css?v=5">
+  <link rel="stylesheet" href="./styles.css?v=6">
 
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -145,7 +145,7 @@
           Добавить заголовок
         </button>
         <div class="input-container">
-          <textarea id="header_input" type="text" placeholder="Введите текст">С днём рождения!</textarea>
+          <textarea id="header_input" type="text" placeholder="С днём рождения!"></textarea>
         </div>
       </div>
 
@@ -155,7 +155,7 @@
           Добавить обращение
         </button>
         <div class="input-container">
-          <textarea id="appeal_input" type="text" placeholder="Введите текст">Уважаемый Руслан Викторович</textarea>
+          <textarea id="appeal_input" type="text" placeholder="Уважаемый Руслан Викторович"></textarea>
         </div>
       </div>
 
@@ -165,7 +165,7 @@
           Добавить описание
         </button>
         <div class="input-container">
-          <textarea id="description_input" type="text" placeholder="Введите текст">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</textarea>
+          <textarea id="description_input" type="text" placeholder="Пусть ваши планы будут амбициозными!"></textarea>
         </div>
       </div>
 
@@ -175,7 +175,7 @@
           Добавить подпись
         </button>
         <div class="input-container">
-          <textarea id="footer_input" type="text" placeholder="Введите текст">Даниил Серебряков</textarea>
+          <textarea id="footer_input" type="text" placeholder="Даниил Серебряков"></textarea>
         </div>
       </div>
 
@@ -192,7 +192,7 @@
           Добавить заголовок
         </button>
         <div class="input-container">
-          <textarea id="header_input_2" type="text" placeholder="Введите текст">С днём рождения!</textarea>
+          <textarea id="header_input_2" type="text" placeholder="С днём рождения!"></textarea>
         </div>
       </div>
 
@@ -202,7 +202,7 @@
           Добавить обращение
         </button>
         <div class="input-container">
-          <textarea id="appeal_input_2" type="text" placeholder="Введите текст">Уважаемый Руслан Викторович</textarea>
+          <textarea id="appeal_input_2" type="text" placeholder="Уважаемый Руслан Викторович"></textarea>
         </div>
       </div>
 
@@ -212,7 +212,7 @@
           Добавить подпись
         </button>
         <div class="input-container">
-          <textarea id="footer_input_2" type="text" placeholder="Введите текст">Даниил Серебряков</textarea>
+          <textarea id="footer_input_2" type="text" placeholder="Даниил Серебряков"></textarea>
         </div>
       </div>
 
@@ -362,9 +362,7 @@
           Добавить описание
         </button>
         <div class="input-container">
-          <textarea id="description_promt" type="text" placeholder="Введите текст">
-            Напиши поздравление по случаю [праздник: Новый год/юбилей компании/профессиональный праздник] в 3-5 небольших предложений
-          </textarea>
+          <textarea id="description_promt" type="text" placeholder="Введите описание">Напиши поздравление по случаю дня рождения в 3-5 небольших предложений</textarea>
         </div>
       </div>
 
@@ -389,7 +387,7 @@
           Добавить должность
         </button>
         <div class="input-container">
-          <textarea id="post_promt" type="text" placeholder="Введите текст"></textarea>
+          <textarea id="post_promt" type="text" placeholder="Введите должность"></textarea>
         </div>
       </div>
 
@@ -410,7 +408,10 @@
 
       <button class="middle-button" onclick="aiResult()">Получить результат</button>
     
-      <textarea id="promt_text" class="promt-result hidden-block"></textarea>
+      <div id="promt_result" class="hidden-block">
+        <textarea id="promt_text" class="promt-result"></textarea>
+        <button class="middle-button" onclick="aiResultCopy()">Скопировать</button>
+      </div>
     </div>
 
   <div id="result" class="hidden-block result-content">

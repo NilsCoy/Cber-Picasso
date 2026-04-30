@@ -40,11 +40,10 @@ document.addEventListener('input', function (e) {
   if (!textarea || textarea.hasAttribute('data-no-resize')) return;
 
   const baseHeight = 35;
-
-  const lines = textarea.value.split('\n').length;
+  const len = textarea.value.split('\n')[0].length;
 
   // если одна строка или пусто — возвращаем базовую высоту
-  if (textarea.value.trim() === '' || lines <= 1) {
+  if (textarea.value.trim() === '' || len < 40) {
     textarea.style.height = baseHeight + 'px';
     return;
   }
@@ -63,6 +62,21 @@ document.addEventListener('click', (e) => {
 
     img.classList.toggle('expanded');
     container.classList.toggle('expanded');
+    let textarea = container.querySelector("textarea")
+    if (textarea !== null) {
+
+      const baseHeight = 35;
+      const len = textarea.value.split('\n')[0].length;
+
+      // если одна строка или пусто — возвращаем базовую высоту
+      if (textarea.value.trim() === '' || len < 40) {
+        textarea.style.height = baseHeight + 'px';
+        return;
+      }
+
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
   }
 });
 
@@ -267,10 +281,10 @@ function aiResult() {
     post: document.getElementById("post_promt").value,
     style: document.querySelector('input[name="style_promt"]:checked')?.value,
   };
-  const result_input = document.getElementById("promt_text")
+  const result_input = document.getElementById("promt_text");
 
   
-  let promt = `Сгенерируй поздравление:\n`
+  let promt = `Сгенерируй поздравление:\n`;
   for (const [key, value] of Object.entries(data)) {
     if (key === 'description') {
       if (!value) {
@@ -313,8 +327,19 @@ function aiResult() {
   }
 
   result_input.value = promt;
-  scrollToSection('promt_text');
+  scrollToSection('promt_result');
 
   result_input.style.height = 'auto';
   result_input.style.height = result_input.scrollHeight + 'px';
+}
+
+function aiResultCopy() {
+  const result_input = document.getElementById("promt_text").value;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(result_input)
+        .then(() => alert("Текст скопирован!"))
+        .catch(err => console.error("Ошибка: ", err));
+    } else {
+      alert("Ваш браузер не поддерживает копирование в буфер обмена");
+    }
 }
