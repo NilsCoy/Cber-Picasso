@@ -9,20 +9,13 @@
   font-family: "Roboto";
   src: url("./Assets/Fonts/Roboto-Italic.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: url("./Assets/Fonts/Roboto-Regular.ttf") format("truetype");
-  font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Roboto";
-  src: url("./Assets/Fonts/Roboto-Bold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("./Assets/Fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -92,19 +85,19 @@ header {
 h1 {
   font-size: 35px;
   color: white;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h2 {
   font-size: 25px;
   color: white;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 h3 {
   font-size: 18px;
   color: white;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 button {
@@ -449,10 +442,12 @@ button {
 .result-content h2 {
   margin-bottom: 25px;
   text-align: center;
+  padding: 0px 20px;
 }
 .result-content h3 {
   margin-bottom: 25px;
   text-align: center;
+  padding: 0px 20px;
 }
 
 .result-block {
