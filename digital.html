@@ -34,6 +34,15 @@
 
     <div id="select_texture" class="hidden-block texture-content">
       <h2>Выбирите картинку</h2>
+
+      <h3>
+        <div>
+          Это станет вашей фоновой картинкой для открытки
+        </div>
+        <div>
+          (нажмите на кнопку для выбора)
+        </div>
+      </h3>
       
       <div class="select-texture">
         <button class="nav left" onclick="scrollSlider(-1, 'slider_1')">‹</button>
@@ -129,6 +138,22 @@
 
   <div id="select_constructor" class="hidden-block select-constructor-content">
     <h2>Какое поздравление придумаем?</h2>
+
+      <h3>
+        <div>
+          Выбирите способ создания поздравления:
+        </div>
+        <div>
+          1) Конструктор для полного редактирования;
+        </div>
+        <div>
+         2)  В шаблонах представлены готовые варинаты описания;
+        </div>
+        <div>
+          3) Если вы хотите использовать ИИ то перейдите в "создание промта";
+        </div>
+      </h3>
+
     <div class="select-button">
       <button class="middle-button" onclick="scrollToSection('constructor'); hideToSection('pattern'); hideToSection('promt'); hideToSection('result')">Конструктор</button>
       <button class="middle-button" onclick="scrollToSection('pattern') ; hideToSection('constructor'); hideToSection('promt'); hideToSection('result')">Шаблоны текста</button>
@@ -138,6 +163,21 @@
     <div id="constructor" class="hidden-block constructor-content">
 
       <h2>Конструктор</h2>
+
+      <h3>
+        <div>
+          Добавьте элементы на открытку.
+        </div>
+        <div>
+          Добавляются только те, в которых есть текст.
+        </div>
+        <div>
+          Если текста нет, то элемент не будет занимать место на открытке.
+        </div>
+        <div>
+          Чтобы применить изменения, нажмите на кнопку.
+        </div>
+      </h3>
 
       <div class="input-button">
         <button class="toggle-button"">
@@ -185,6 +225,15 @@
     <div id="pattern" class="hidden-block pattern-content">
 
       <h2>Шаблоны</h2>
+
+      <h3>
+        <div>
+          Здесь вы можете как и в конструкторе добавить нужные элементы, однако теперь тербуется выбрать описание из представленных шаблонов текста.
+        </div>
+        <div>
+          Добавляются только те элементы, в которых есть текст.
+        </div>
+      </h3>
 
       <div class="input-button">
         <button class="toggle-button"">
@@ -356,6 +405,24 @@
         <div>промт для ИИ</div>
       </h2>
 
+      <h3>
+        <div>
+          Если вы хотите сделать описание открытки с помощью ИИ, то здесь можно сделать промт для генерации, чтобы потом перенести ее в любой доступный вам сервис.
+        </div>
+        <div>
+          Добавляются только те элементы, в которых есть текст.
+        </div>
+        <div>
+          Заполения поля "описание" обязательно.
+        </div>
+        <div>
+          Полученный промт можно скопировать на кнопку.
+        </div>
+        <div>
+          После получения описания открытки от ии, можно его внести в конструкторе.
+        </div>
+      </h3>
+
       <div class="input-button">
         <button class="toggle-button"">
           <div class="button-image"></div>
@@ -416,6 +483,15 @@
 
   <div id="result" class="hidden-block result-content">
     <h2>Ваша открытка готова!</h2>
+
+      <h3>
+        <div>
+          Теперь вы можете скачать полученную открытку нажав на кнопку "Скачать".
+        </div>
+        <div>
+          Если результат вас не устраивает, вы можете вернуться на пердыдущие этапы в любой момент. 
+        </div>
+      </h3>
     
     <div class="result-block">
       <div id="result_cart" class="cart">
