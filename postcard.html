@@ -6,7 +6,7 @@
   <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <title>Пикассо</title>
 
-  <link rel="stylesheet" href="./postcard_styles.css?v=1">
+  <link rel="stylesheet" href="./postcard_styles.css?v=10">
 
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,16 @@
     </div>
 
     <div id="select_texture" class="hidden-block texture-content">
-      <h2>Выбирите картинку</h2>
+      <h2>Выбирите фон</h2>
+
+      <h3>
+        <div>
+          Выберите фоновое изображение для открытки.
+        </div>
+        <div>
+          (нажмите на кнопку для выбора)
+        </div>
+      </h3>
       
       <div class="select-texture">
         <button class="nav left" onclick="scrollSlider(-1, 'slider_1')">‹</button>
@@ -50,6 +59,7 @@
             <div class="cart">
               <img class="back" src="./Assets/postcard_preset_image_1_2.png" alt="Вариант 1">
               <img class="front" src="./Assets/postcard_preset_image_1_1.png" alt="Вариант 1">
+              <img class="inside" src="./Assets/postcard_preset_image_1_3.png" alt="Вариант 1" style="display: none;">
               <p class="cart-header">С ДНЁМ РОЖДЕНИЯ!</p>
               <p class="cart-p1">Уважаемый Иван Иванов</p>
             </div>
@@ -67,13 +77,25 @@
 
       <h2>Конструктор</h2>
 
+      <h3>
+        <div>
+          Добавьте текстовые элементы.
+        </div>
+        <div>
+          Пустые элементы не отображаются.
+        </div>
+        <div>
+          Чтобы применить изменения — нажмите кнопку.
+        </div>
+      </h3>
+
       <div class="input-button">
         <button class="toggle-button"">
           <div class="button-image"></div>
           Добавить заголовок
         </button>
         <div class="input-container">
-          <textarea id="header_input" type="text" placeholder="Введите текст"></textarea>
+          <textarea id="header_input" type="text" placeholder="С ДНЁМ РОЖДЕНИЯ!"></textarea>
         </div>
       </div>
 
@@ -83,7 +105,7 @@
           Добавить описание
         </button>
         <div class="input-container">
-          <textarea id="description_input" type="text" placeholder="Введите текст"></textarea>
+          <textarea id="description_input" type="text" placeholder="Уважаемый Иван Иванов"></textarea>
         </div>
       </div>
 
@@ -94,16 +116,35 @@
 
   <div id="result" class="hidden-block result-content">
     <h2>Ваша открытка готова!</h2>
+
+      <h3>
+        <div>
+          Нажмите «Скачать».
+        </div>
+        <div>
+          При необходимости вернитесь к любому предыдущему этапу.
+        </div>
+      </h3>
     
     <div class="result-block">
-      <div id="result_cart" class="cart">
+      <h3>Внешняя часть</h3>
+      <div id="result_cart1" class="cart">
         <img class="back" src="" alt="Результат">
         <img class="front" src="" alt="Результат">
         <!-- <div class="cart-image" data-html2canvas-ignore="true"></div> -->
         <p id="header_result" class="cart-header">С днём рождения!</p>
         <p id="description_result" class="cart-p1">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
       </div>
-      <button class="middle-button" onclick="downloadResult()">Скачать</button>
+      <button class="middle-button" onclick="downloadResult1()">Скачать</button>
+    </div>
+    
+    <div class="result-block">
+      <h3>Внутренняя часть</h3>
+      <div id="result_cart2" class="cart">
+        <img class="inside" src="" alt="Результат">
+      </div>
+      <button class="middle-button" onclick="downloadResult2()">Скачать</button>
+      </div>
     </div>
   </div>
     

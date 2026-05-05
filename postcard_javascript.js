@@ -67,8 +67,9 @@ document.addEventListener('click', (e) => {
 });
 
 
-let selectedPresetImage_1 = null;
-let selectedPresetImage_2 = null;
+let selectedPresetImage_back = null;
+let selectedPresetImage_front = null;
+let selectedPresetImage_inside = null;
 
 let selectedPresetText = null;
 
@@ -76,8 +77,10 @@ function selectPresetImage(buttonElement) {
   const cartContainer = buttonElement.closest('.select-block');
   const imgElement_1 = cartContainer.querySelector('.back');
   const imgElement_2 = cartContainer.querySelector('.front');
-  selectedPresetImage_1 = imgElement_1.src;
-  selectedPresetImage_2 = imgElement_2.src;
+  const imgElement_3 = cartContainer.querySelector('.inside');
+  selectedPresetImage_back = imgElement_1.src;
+  selectedPresetImage_front = imgElement_2.src;
+  selectedPresetImage_inside = imgElement_3.src;
 }
 
 function selectPresetText(buttonElement) {
@@ -108,12 +111,14 @@ function selectPresetText(buttonElement) {
 
 function constructorResult() {
 
-  const img_1 = document.querySelector("#result_cart .back");
-  const img_2 = document.querySelector("#result_cart .front");
+  const img_1 = document.querySelector("#result_cart1 .back");
+  const img_2 = document.querySelector("#result_cart1 .front");
+  const img_3 = document.querySelector("#result_cart2 .inside");
 
-  if (selectedPresetImage_1) {
-    img_1.src = selectedPresetImage_1;
-    img_2.src = selectedPresetImage_2;
+  if (selectedPresetImage_back) {
+    img_1.src = selectedPresetImage_back;
+    img_2.src = selectedPresetImage_front;
+    img_3.src = selectedPresetImage_inside;
   }
 
   const data = {
@@ -200,8 +205,8 @@ function patternResult() {
   window.resultData = data;
 }
 
-function downloadResult() {
-  const node = document.getElementById("result_cart");
+function downloadResult1() {
+  const node = document.getElementById("result_cart1");
 
   domtoimage.toPng(node, {
     cacheBust: true,
@@ -215,7 +220,27 @@ function downloadResult() {
   })
   .then(dataUrl => {
     const link = document.createElement("a");
-    link.download = "card.png";
+    link.download = "front.png";
+    link.href = dataUrl;
+    link.click();
+  });
+}
+function downloadResult2() {
+  const node = document.getElementById("result_cart2");
+
+  domtoimage.toPng(node, {
+    cacheBust: true,
+    useCORS: true,
+    width: node.offsetWidth * 5,
+    height: node.offsetHeight * 5,
+    style: {
+      transform: "scale(5)",
+      transformOrigin: "top left"
+    }
+  })
+  .then(dataUrl => {
+    const link = document.createElement("a");
+    link.download = "back.png";
     link.href = dataUrl;
     link.click();
   });
