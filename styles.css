@@ -75,15 +75,15 @@ header {
 }
 
 .head-content {
-  padding-top: 300px;
   display: block;
   justify-content: center;
   text-align: center;
+  padding: 0px 20px;
+  padding-top: 300px;
 }
 
 .head-div {
   display: grid;
-  padding: 0px 20px;
 }
 
 h1 {
