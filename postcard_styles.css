@@ -1,6 +1,15 @@
+
+
 @font-face {
   font-family: "Roboto";
   src: url("./Assets/Fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./Assets/Fonts/Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -219,30 +228,103 @@ button {
 
 .cart p {
   color: white;
-  text-align: left;
-  padding-left: 35px;
-  padding-right: 130px;
   height: 0;
 }
-.cart-header {
+.cart-header-v1 {
   font-weight: 600;
   font-size: 20px;
   position: relative;
   top: -70px;
+  text-align: left;
+  padding-left: 35px;
+  padding-right: 130px;
   /* transform: translateY(-70px); */
 }
-.cart-p1, .cart-p2 {
-  font-weight: 300;
+.cart-p1-v1, .cart-p2-v1 {
+  font-weight: 400;
   font-size: 10px;
   position: relative;
   top: -45px;
+  text-align: left;
+  padding-left: 35px;
+  padding-right: 130px;
 }
 
-.cart-footer{
+.cart-footer-v1 {
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 15px;
+  font-size: 10px;
   font-style: italic;
+  text-align: left;
+  padding-left: 35px;
+  padding-right: 130px;
+}
+
+.cart-header-v2 {
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  top: -110px;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 130px;
+  /* transform: translateY(-70px); */
+}
+.cart-p1-v2, .cart-p2-v2 {
+  font-weight: 400;
+  font-size: 10px;
+  position: relative;
+  top: -85px;
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 130px;
+}
+
+.cart-footer1-v2 {
+  font-weight: 300;
+  position: relative;
+  font-size: 8px;
+  text-align: left;
+  padding-left: 9px;
+  padding-right: 130px;
+  top: -25px;
+}
+
+.cart-footer2-v2 {
+  font-weight: 300;
+  position: relative;
+  font-size: 8px;
+  text-align: left;
+  padding-left: 9px;
+  padding-right: 130px;
+  top: -15px;
+}
+
+.cart-header-v3 {
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  top: -110px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  /* transform: translateY(-70px); */
+}
+.cart-p1-v3, .cart-p2-v3 {
+  font-weight: 400;
+  font-size: 10px;
+  position: relative;
+  top: -85px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.gradient1 {
+  background-image: linear-gradient(to left, #15D566, #0D8E43);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .nav {

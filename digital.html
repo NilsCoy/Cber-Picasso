@@ -155,9 +155,88 @@
       </h3>
 
     <div class="select-button">
-      <button class="middle-button" onclick="scrollToSection('constructor'); hideToSection('pattern'); hideToSection('promt'); hideToSection('result')">Конструктор</button>
-      <button class="middle-button" onclick="scrollToSection('pattern') ; hideToSection('constructor'); hideToSection('promt'); hideToSection('result')">Шаблоны текста</button>
+      <button class="middle-button" onclick="scrollToSection('constructor'); hideToSection('pattern'); hideToSection('result')">Конструктор</button>
+      <button class="middle-button" onclick="scrollToSection('pattern') ; hideToSection('constructor'); hideToSection('result')">Шаблоны текста</button>
       <button class="middle-button" onclick="scrollToSection('promt') ; hideToSection('constructor'); hideToSection('pattern'); hideToSection('result')">ИИ</button>
+    </div>
+
+    
+    <div id="promt" class="hidden-block promt-content">
+
+      <h2>
+        <div>Давайте создадим</div>
+        <div>промт для ИИ</div>
+      </h2>
+
+      <h3>
+        <div>
+          Заполните описание, получите промт и скопируйте его.
+        </div>
+        <div>
+          Готовый текст можно использовать в конструкторе.
+        </div>
+        <div>
+          Пустые элементы не отображаются.
+        </div>
+      </h3>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить описание
+        </button>
+        <div class="input-container">
+          <textarea id="description_promt" type="text" placeholder="Введите описание">Напиши поздравление по случаю дня рождения в 3-5 небольших предложений</textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить пол
+        </button>
+        <div class="input-container">
+          <div>
+            <input type="radio" id="gender_m" name="gender_promt" value="male" /> <label for="gender_m">Мужчина</label>
+          </div>
+          <div>
+            <input type="radio" id="gender_f" name="gender_promt" value="female" /> <label for="gender_f">Женщина</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Добавить должность
+        </button>
+        <div class="input-container">
+          <textarea id="post_promt" type="text" placeholder="Введите должность"></textarea>
+        </div>
+      </div>
+
+      <div class="input-button">
+        <button class="toggle-button"">
+          <div class="button-image"></div>
+          Стиль поздравленя
+        </button>
+        <div class="input-container">
+          <div>
+            <input type="radio" id="style_1" name="style_promt" value="style_1" /> <label for="style_1">Душевное</label>
+          </div>
+          <div>
+            <input type="radio" id="style_2" name="style_promt" value="style_2" /> <label for="style_2">Деловое</label>
+          </div>
+        </div>
+      </div>
+
+      <button class="middle-button" onclick="aiResult()">Получить результат</button>
+    
+      <div id="promt_result" class="hidden-block">
+        <textarea id="promt_text" class="promt-result"></textarea>
+        <button class="middle-button" onclick="aiResultCopy()">Скопировать</button>
+        <button class="big-button" onclick="scrollToSection('constructor')">В конструктор</button>
+      </div>
     </div>
 
     <div id="constructor" class="hidden-block constructor-content">
@@ -182,7 +261,7 @@
           Добавить заголовок
         </button>
         <div class="input-container">
-          <textarea id="header_input" type="text" placeholder="С днём рождения!"></textarea>
+          <textarea id="header_input" type="text" placeholder="С днём рождения!">С днём рождения!</textarea>
         </div>
       </div>
 
@@ -244,7 +323,7 @@
           Добавить заголовок
         </button>
         <div class="input-container">
-          <textarea id="header_input_2" type="text" placeholder="С днём рождения!"></textarea>
+          <textarea id="header_input_2" type="text" placeholder="С днём рождения!">С днём рождения!</textarea>
         </div>
       </div>
 
@@ -399,85 +478,6 @@
     </div>
   </div>
 
-  
-
-    <div id="promt" class="hidden-block promt-content">
-
-      <h2>
-        <div>Давайте создадим</div>
-        <div>промт для ИИ</div>
-      </h2>
-
-      <h3>
-        <div>
-          Заполните описание, получите промт и скопируйте его.
-        </div>
-        <div>
-          Готовый текст можно использовать в конструкторе.
-        </div>
-        <div>
-          Пустые элементы не отображаются.
-        </div>
-      </h3>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Добавить описание
-        </button>
-        <div class="input-container">
-          <textarea id="description_promt" type="text" placeholder="Введите описание">Напиши поздравление по случаю дня рождения в 3-5 небольших предложений</textarea>
-        </div>
-      </div>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Добавить пол
-        </button>
-        <div class="input-container">
-          <div>
-            <input type="radio" id="gender_m" name="gender_promt" value="male" /> <label for="gender_m">Мужчина</label>
-          </div>
-          <div>
-            <input type="radio" id="gender_f" name="gender_promt" value="female" /> <label for="gender_f">Женщина</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Добавить должность
-        </button>
-        <div class="input-container">
-          <textarea id="post_promt" type="text" placeholder="Введите должность"></textarea>
-        </div>
-      </div>
-
-      <div class="input-button">
-        <button class="toggle-button"">
-          <div class="button-image"></div>
-          Стиль поздравленя
-        </button>
-        <div class="input-container">
-          <div>
-            <input type="radio" id="style_1" name="style_promt" value="style_1" /> <label for="style_1">Душевное</label>
-          </div>
-          <div>
-            <input type="radio" id="style_2" name="style_promt" value="style_2" /> <label for="style_2">Деловое</label>
-          </div>
-        </div>
-      </div>
-
-      <button class="middle-button" onclick="aiResult()">Получить результат</button>
-    
-      <div id="promt_result" class="hidden-block">
-        <textarea id="promt_text" class="promt-result"></textarea>
-        <button class="middle-button" onclick="aiResultCopy()">Скопировать</button>
-      </div>
-    </div>
-
   <div id="result" class="hidden-block result-content">
     <h2>Ваша открытка готова!</h2>
 
@@ -500,6 +500,8 @@
         <p id="footer_result" class="cart-footer">Пётр Петров</p>
       </div>
       <button class="middle-button" onclick="downloadResult()">Скачать</button>
+
+      <button class="big-button" onclick="scrollToSection('select_texture')">Вернуться в начало</button>
     </div>
   </div>
 

@@ -60,10 +60,50 @@
               <img class="back" src="./Assets/postcard_preset_image_1_2.png" alt="Вариант 1">
               <img class="front" src="./Assets/postcard_preset_image_1_1.png" alt="Вариант 1">
               <img class="inside" src="./Assets/postcard_preset_image_1_3.png" alt="Вариант 1" style="display: none;">
-              <p class="cart-header">С ДНЁМ РОЖДЕНИЯ!</p>
-              <p class="cart-p1">Уважаемый Иван Иванов</p>
+              <p class="type" style="display: none;">v1</p>
+              <p class="cart-header-v1">С ДНЁМ РОЖДЕНИЯ!</p>
+              <p class="cart-p1-v1">Уважаемый Иван Иванов</p>
             </div>
             <button class="middle-button" onclick="selectPresetImage(this); scrollToSection('constructor')">Вариант 1</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img class="back" src="./Assets/postcard_preset_image_2_2.png" alt="Вариант 2">
+              <img class="front" src="./Assets/postcard_preset_image_2_1.png" alt="Вариант 2">
+              <img class="inside" src="./Assets/postcard_preset_image_2_3.png" alt="Вариант 2" style="display: none;">
+              <p class="type" style="display: none;">v2</p>
+              <p class="cart-header-v2">С ДНЁМ РОЖДЕНИЯ!</p>
+              <p class="cart-p1-v2"><span class="gradient1">Уважаемый Иван Иванов</span></p>
+              <p class="cart-footer1-v2">Спасибо, что вы с нами.</p>
+              <p class="cart-footer2-v2">Вместе мы создаём <span class="gradient1">лучшее будущее.</span></p>
+            </div>
+            <button class="middle-button" onclick="selectPresetImage(this); scrollToSection('constructor')">Вариант 2</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img class="back" src="./Assets/postcard_preset_image_3_2.png" alt="Вариант 3">
+              <img class="front" src="./Assets/postcard_preset_image_3_1.png" alt="Вариант 3">
+              <img class="inside" src="./Assets/postcard_preset_image_3_3.png" alt="Вариант 3" style="display: none;">
+              <p class="type" style="display: none;">v3</p>
+              <p class="cart-header-v2">С ДНЁМ РОЖДЕНИЯ!</p>
+              <p class="cart-p1-v2">Уважаемый Иван Иванов</p>
+              <p class="cart-footer1-v2">Спасибо, что вы с нами.</p>
+              <p class="cart-footer2-v2">Вместе мы создаём лучшее будущее.</p>
+            </div>
+            <button class="middle-button" onclick="selectPresetImage(this); scrollToSection('constructor')">Вариант 3</button>
+          </div>
+          <div class="select-block">
+            <div class="cart">
+              <img class="back" src="./Assets/postcard_preset_image_4_2.png" alt="Вариант 4">
+              <img class="front" src="./Assets/postcard_preset_image_4_1.png" alt="Вариант 4">
+              <img class="inside" src="./Assets/postcard_preset_image_4_3.png" alt="Вариант 4" style="display: none;">
+              <p class="type" style="display: none;">v4</p>
+              <p class="cart-header-v3">С ДНЁМ РОЖДЕНИЯ!</p>
+              <p class="cart-p1-v3">Уважаемый Иван Иванов</p>
+              <p class="cart-footer1-v2">Спасибо, что вы с нами.</p>
+              <p class="cart-footer2-v2">Вместе мы создаём лучшее будущее.</p>
+            </div>
+            <button class="middle-button" onclick="selectPresetImage(this); scrollToSection('constructor')">Вариант 4</button>
           </div>
 
           <button class="nav right" onclick="scrollSlider(1, 'slider_1')">›</button>
@@ -126,14 +166,41 @@
         </div>
       </h3>
     
-    <div class="result-block">
+    <div id="result_outside" class="result-block">
       <h3>Внешняя часть</h3>
-      <div id="result_cart1" class="cart">
+      <div id="result_cart1_v1" class="cart" style="display: none;">
         <img class="back" src="" alt="Результат">
         <img class="front" src="" alt="Результат">
         <!-- <div class="cart-image" data-html2canvas-ignore="true"></div> -->
-        <p id="header_result" class="cart-header">С днём рождения!</p>
-        <p id="description_result" class="cart-p1">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+        <p id="header_result_v1" class="cart-header-v1">С днём рождения!</p>
+        <p id="description_result_v1" class="cart-p1-v1">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+      </div>
+      <div id="result_cart1_v2" class="cart" style="display: none;">
+        <img class="back" src="" alt="Результат">
+        <img class="front" src="" alt="Результат">
+        <!-- <div class="cart-image" data-html2canvas-ignore="true"></div> -->
+        <p id="header_result_v2" class="cart-header-v2">С днём рождения!</p>
+        <p class="cart-p1-v2"><span id="description_result_v2" class="gradient1"></span></p>
+        <p id="footer1_result_v2" class="cart-footer1-v2">Спасибо, что вы с нами.</p>
+        <p id="footer2_result_v2" class="cart-footer2-v2">Вместе мы создаём <span class="gradient1">лучшее будущее.</span></p>
+      </div>
+      <div id="result_cart1_v3" class="cart" style="display: none;">
+        <img class="back" src="" alt="Результат">
+        <img class="front" src="" alt="Результат">
+        <!-- <div class="cart-image" data-html2canvas-ignore="true"></div> -->
+        <p id="header_result_v3" class="cart-header-v2">С днём рождения!</p>
+        <p id="description_result_v3" class="cart-p1-v2">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+        <p id="footer1_result_v3" class="cart-footer1-v2">Спасибо, что вы с нами.</p>
+        <p id="footer2_result_v3" class="cart-footer2-v2">Вместе мы создаём лучшее будущее.</p>
+      </div>
+      <div id="result_cart1_v4" class="cart" style="display: none;">
+        <img class="back" src="" alt="Результат">
+        <img class="front" src="" alt="Результат">
+        <!-- <div class="cart-image" data-html2canvas-ignore="true"></div> -->
+        <p id="header_result_v4" class="cart-header-v3">С днём рождения!</p>
+        <p id="description_result_v4" class="cart-p1-v3">Пусть ваши решения будут точными, планы — амбициозными, а результаты — впечатляющими. Желаем крепкого здоровья и уверенности в каждом дне!</p>
+        <p id="footer1_result_v4" class="cart-footer1-v2">Спасибо, что вы с нами.</p>
+        <p id="footer2_result_v4" class="cart-footer2-v2">Вместе мы создаём лучшее будущее.</p>
       </div>
       <button class="middle-button" onclick="downloadResult1()">Скачать</button>
     </div>

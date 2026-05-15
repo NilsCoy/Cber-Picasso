@@ -72,15 +72,19 @@ let selectedPresetImage_front = null;
 let selectedPresetImage_inside = null;
 
 let selectedPresetText = null;
+let selectedPresetType = null;
 
 function selectPresetImage(buttonElement) {
   const cartContainer = buttonElement.closest('.select-block');
   const imgElement_1 = cartContainer.querySelector('.back');
   const imgElement_2 = cartContainer.querySelector('.front');
   const imgElement_3 = cartContainer.querySelector('.inside');
+  const type = cartContainer.querySelector('.type');
   selectedPresetImage_back = imgElement_1.src;
   selectedPresetImage_front = imgElement_2.src;
   selectedPresetImage_inside = imgElement_3.src;
+  selectedPresetType = type.textContent
+  
 }
 
 function selectPresetText(buttonElement) {
@@ -111,8 +115,16 @@ function selectPresetText(buttonElement) {
 
 function constructorResult() {
 
-  const img_1 = document.querySelector("#result_cart1 .back");
-  const img_2 = document.querySelector("#result_cart1 .front");
+  const container = document.querySelector("#result_outside")
+  for (const child of container.children) {
+    child.style.display = 'none';
+  }
+
+  const photo = document.querySelector("#result_cart1_"+selectedPresetType)
+  photo.style.display = "block"
+
+  const img_1 = document.querySelector("#result_cart1_"+selectedPresetType+" .back");
+  const img_2 = document.querySelector("#result_cart1_"+selectedPresetType+" .front");
   const img_3 = document.querySelector("#result_cart2 .inside");
 
   if (selectedPresetImage_back) {
@@ -126,8 +138,8 @@ function constructorResult() {
     description: document.getElementById("description_input").value
   };
 
-  const header = document.getElementById("header_result")
-  const description = document.getElementById("description_result")
+  const header = document.getElementById("header_result_"+selectedPresetType)
+  const description = document.getElementById("description_result_"+selectedPresetType)
 
   // Записываем в карточку
   header.textContent = data.header;
@@ -206,7 +218,7 @@ function patternResult() {
 }
 
 function downloadResult1() {
-  const node = document.getElementById("result_cart1");
+  const node = document.getElementById("result_cart1_"+selectedPresetType);
 
   domtoimage.toPng(node, {
     cacheBust: true,
