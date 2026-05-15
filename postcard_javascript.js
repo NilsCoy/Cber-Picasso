@@ -233,11 +233,14 @@ function downloadResult1() {
     }
   })
   .then(dataUrl => {
-    const link = document.createElement("a");
-    link.download = "front.png";
-    link.href = dataUrl;
-    link.click();
+    pngToPdf(dataUrl, "front.pdf");
   });
+  // .then(dataUrl => {
+  //   const link = document.createElement("a");
+  //   link.download = "front.png";
+  //   link.href = dataUrl;
+  //   link.click();
+  // });
 }
 function downloadResult2() {
   const node = document.getElementById("result_cart2");
@@ -253,11 +256,40 @@ function downloadResult2() {
     }
   })
   .then(dataUrl => {
-    const link = document.createElement("a");
-    link.download = "back.png";
-    link.href = dataUrl;
-    link.click();
+    pngToPdf(dataUrl, "back.pdf");
   });
+  // .then(dataUrl => {
+  //   const link = document.createElement("a");
+  //   link.download = "back.png";
+  //   link.href = dataUrl;
+  //   link.click();
+  // });
+}
+function pngToPdf(dataUrl, fileName = "document.pdf") {
+  const { jsPDF } = window.jspdf;
+
+  const img = new Image();
+
+  img.onload = function () {
+    const pdf = new jsPDF({
+      orientation: img.width > img.height ? "landscape" : "portrait",
+      unit: "px",
+      format: [img.width, img.height]
+    });
+
+    pdf.addImage(
+      dataUrl,
+      "PNG",
+      0,
+      0,
+      img.width,
+      img.height
+    );
+
+    pdf.save(fileName);
+  };
+
+  img.src = dataUrl;
 }
 // function downloadResult() {
 //   const node = document.getElementById("result_cart");
