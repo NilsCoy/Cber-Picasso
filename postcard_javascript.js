@@ -117,7 +117,9 @@ function constructorResult() {
 
   const container = document.querySelector("#result_outside")
   for (const child of container.children) {
-    child.style.display = 'none';
+    if (child.tagName !== "BUTTON" && child.tagName !== "H3") {
+      child.style.display = 'none';
+    }
   }
 
   const photo = document.querySelector("#result_cart1_"+selectedPresetType)
