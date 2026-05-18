@@ -219,7 +219,48 @@ function patternResult() {
   window.resultData = data;
 }
 
-function downloadResult1() {
+function downloadResultPNG1() {
+  const node = document.getElementById("result_cart1_"+selectedPresetType);
+
+  domtoimage.toPng(node, {
+    cacheBust: true,
+    useCORS: true,
+    width: node.offsetWidth * 5,
+    height: node.offsetHeight * 5,
+    style: {
+      transform: "scale(5)",
+      transformOrigin: "top left"
+    }
+  })
+  .then(dataUrl => {
+    const link = document.createElement("a");
+    link.download = "front.png";
+    link.href = dataUrl;
+    link.click();
+  });
+}
+function downloadResultPNG2() {
+  const node = document.getElementById("result_cart2");
+
+  domtoimage.toPng(node, {
+    cacheBust: true,
+    useCORS: true,
+    width: node.offsetWidth * 5,
+    height: node.offsetHeight * 5,
+    style: {
+      transform: "scale(5)",
+      transformOrigin: "top left"
+    }
+  })
+  .then(dataUrl => {
+    const link = document.createElement("a");
+    link.download = "back.png";
+    link.href = dataUrl;
+    link.click();
+  });
+}
+
+function downloadResultPDF1() {
   const node = document.getElementById("result_cart1_"+selectedPresetType);
 
   domtoimage.toPng(node, {
@@ -242,7 +283,7 @@ function downloadResult1() {
   //   link.click();
   // });
 }
-function downloadResult2() {
+function downloadResultPDF2() {
   const node = document.getElementById("result_cart2");
 
   domtoimage.toPng(node, {

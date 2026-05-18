@@ -232,7 +232,7 @@ function patternResult() {
   window.resultData = data;
 }
 
-function downloadResult() {
+function downloadResultPNG() {
   const node = document.getElementById("result_cart");
 
   domtoimage.toPng(node, {
@@ -251,6 +251,50 @@ function downloadResult() {
     link.href = dataUrl;
     link.click();
   });
+}
+
+function downloadResultPDF() {
+  const node = document.getElementById("result_cart");
+
+  domtoimage.toPng(node, {
+    cacheBust: true,
+    useCORS: true,
+    width: node.offsetWidth * 5,
+    height: node.offsetHeight * 5,
+    style: {
+      transform: "scale(5)",
+      transformOrigin: "top left"
+    }
+  })
+  .then(dataUrl => {
+    pngToPdf(dataUrl, "cart.pdf");
+  });
+}
+function pngToPdf(dataUrl, fileName = "document.pdf") {
+  const { jsPDF } = window.jspdf;
+
+  const img = new Image();
+
+  img.onload = function () {
+    const pdf = new jsPDF({
+      orientation: img.width > img.height ? "landscape" : "portrait",
+      unit: "px",
+      format: [img.width, img.height]
+    });
+
+    pdf.addImage(
+      dataUrl,
+      "PNG",
+      0,
+      0,
+      img.width,
+      img.height
+    );
+
+    pdf.save(fileName);
+  };
+
+  img.src = dataUrl;
 }
 // function downloadResult() {
 //   const node = document.getElementById("result_cart");
@@ -316,10 +360,10 @@ function aiResult() {
       if (value && value !== 'undefined') {
         let text = value;
         if (value === 'style_1') {
-          text = 'мягкий, личный, искренний, без шаблонов и канцелярита.';
+          text = 'мягкий, личный, искренний, без шаблонов и канцелярита, текст должен звучать естественно и по-человечески, будто поздравление написано лично, добавь немного тепла и лёгкой эмоциональности, но без излишней сентиментальности, не используй избитые пожелания вроде «успехов во всех начинаниях» или «крепкого здоровья и счастья»';
         }
         if (value === 'style_2') {
-          text = 'официально-деловой, сдержанный, статусный, без панибратства и бытовых слов';
+          text = 'официально-деловой, сдержанный, статусный, текст должен звучать современно и профессионально, без излишнего пафоса, избегай панибратства, бытовых формулировок, фамильярности и чрезмерной эмоциональности, не используй шаблонные фразы и канцелярские конструкции, акцент сделай на уважении, профессиональных качествах, авторитете и пожеланиях стабильности, развития и внутреннего баланса';
         }
         promt += `\nСтиль поздравления: ${text}`;
       }
