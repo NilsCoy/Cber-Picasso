@@ -238,10 +238,10 @@ function downloadResultPNG() {
   domtoimage.toPng(node, {
     cacheBust: true,
     useCORS: true,
-    width: node.offsetWidth * 5,
-    height: node.offsetHeight * 5,
+    width: node.offsetWidth * 3,
+    height: node.offsetHeight * 3,
     style: {
-      transform: "scale(5)",
+      transform: "scale(3)",
       transformOrigin: "top left"
     }
   })
@@ -259,10 +259,10 @@ function downloadResultPDF() {
   domtoimage.toPng(node, {
     cacheBust: true,
     useCORS: true,
-    width: node.offsetWidth * 5,
-    height: node.offsetHeight * 5,
+    width: node.offsetWidth * 3,
+    height: node.offsetHeight * 3,
     style: {
-      transform: "scale(5)",
+      transform: "scale(3)",
       transformOrigin: "top left"
     }
   })
