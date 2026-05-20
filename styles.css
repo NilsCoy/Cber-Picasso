@@ -79,7 +79,8 @@ header {
   justify-content: center;
   text-align: center;
   padding: 0px 20px;
-  padding-top: 300px;
+  padding-top: 150px;
+  margin-bottom: 300px;
 }
 
 .head-div {
@@ -160,9 +161,7 @@ button {
 }
 
 .texture-content {
-  padding-top: 100px;
-  margin-top: 200px;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
 }
 .texture-content h2 {
   margin-bottom: 25px;
@@ -304,9 +303,7 @@ button {
 }
 
 .select-constructor-content {
-  padding-top: 100px;
-  margin-top: 200px;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
 }
 
 .select-constructor-content h2 {
@@ -328,9 +325,8 @@ button {
 
 
 .constructor-content {
-  padding-top: 100px;
-  margin-top: 200px;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
+  text-align: center;
   padding: 0px 20px;
 }
 
@@ -404,15 +400,13 @@ button {
 }
 
 .pattern-content {
-  padding-top: 100px;
-  margin-top: 200px;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
+  text-align: center;
 }
 
 .promt-content {
-  padding-top: 100px;
-  margin-top: 200px;
   margin-bottom: 300px;
+  text-align: center;
   padding: 0px 20px;
 }
 
@@ -440,9 +434,7 @@ button {
 }
 
 .result-content {
-  padding-top: 100px;
-  margin-top: 200px;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
 }
 
 .result-content h2 {
